@@ -1,0 +1,50 @@
+﻿@model Universidad.Models.Subjectt
+
+@{
+    ViewBag.Title = "DETALLE";
+}
+
+<h2>DETALLE</h2>
+
+<div>
+    <h4>Materias</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.namee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.namee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hour_hand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hour_hand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Teacher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teacher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maximum_students)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maximum_students)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id_Subject }) |
+    @Html.ActionLink("Volver", "Index")
+</p>

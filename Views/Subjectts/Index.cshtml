@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Universidad.Models.Subjectt>
+
+@{
+    ViewBag.Title = "Materias";
+}
+
+@{
+    var numero = Model.Count();
+}
+
+<h2 class="page-header">Materias<small> @numero  REGISTRO</small></h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevas Materia", "Create")
+<p>
+    @Html.ActionLink("Volver Al Menu Administrador", "Index", "MenuADM")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.namee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hour_hand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Teacher)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maximum_students)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.namee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hour_hand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Teacher)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.maximum_students)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id_Subject }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.Id_Subject }) |
+                @Html.ActionLink("Borrar", "Delete", new { id = item.Id_Subject })
+            </td>
+        </tr>
+    }
+
+</table>

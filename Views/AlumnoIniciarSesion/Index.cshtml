@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "BIENVENIDO ALUMNO - INICIE SESION PARA ANOTARSE A LAS MATERIAS";
+}
+
+<h2>@ViewBag.Title</h2>
+<div class="container">
+
+    @{
+
+        if (!string.IsNullOrEmpty(ViewBag.Message))
+        {
+            <div class="alert alert-warning">@ViewBag.Message</div>
+        }
+    }
+    <br />
+    <br />
+    <address>
+        <strong>ALUMNO</strong>
+    </address>
+
+
+    <form action="/AlumnoIniciarSesion/LoginALUMN" method="post">
+        <div class="form-group">
+            <label>Ingrese DNI</label>
+            <input type="text" name="DNI" value="" />
+        </div>
+        <div class="form-group">
+            <label>Ingrese Legajo</label>
+            <input type="password" name="Legajo" value="" />
+        </div>
+        <div class="form-group">
+            <button>Iniciar Sesion</button>
+        </div>
+    </form>
+
+</div>
+

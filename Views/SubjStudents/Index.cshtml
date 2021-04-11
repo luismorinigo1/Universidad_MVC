@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Universidad.Models.SubjStudent>
+
+@{
+    ViewBag.Title = "Materias";
+}
+
+@{
+    var numero = Model.Count();
+}
+
+<h2 class="page-header">Materias<small> @numero  REGISTRO</small></h2>
+
+<p>
+    @Html.ActionLink("Anotarse a las Materias", "Create")
+<p>
+    @Html.ActionLink("Volver Al Menu Alumnos", "Index", "MenuALUM")
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Dni)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subjects)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dni)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subjects)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id_subj }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.Id_subj }) |
+                @Html.ActionLink("Borrar", "Delete", new { id = item.Id_subj })
+            </td>
+        </tr>
+    }
+
+</table>

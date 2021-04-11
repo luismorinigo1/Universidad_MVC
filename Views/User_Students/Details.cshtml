@@ -1,0 +1,58 @@
+﻿@model Universidad.Models.User_Students
+
+@{
+    ViewBag.Title = "DETALLE";
+}
+
+<h2>DETALLE</h2>
+
+<div>
+    <h4>Alumnos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Namee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Namee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dni)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Filee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Filee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subjects)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subjects)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id_User }) |
+    @Html.ActionLink("Volver", "Index")
+</p>

@@ -1,0 +1,56 @@
+﻿@model Universidad.Models.Subjectt
+
+@{
+    ViewBag.Title = "Borrar";
+}
+
+<h2>Borrar</h2>
+
+<h3>Estás segura de que quieres eliminar esto?</h3>
+<div>
+    <h4>Materias</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.namee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.namee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hour_hand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hour_hand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Teacher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teacher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maximum_students)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maximum_students)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver", "Index")
+        </div>
+    }
+</div>

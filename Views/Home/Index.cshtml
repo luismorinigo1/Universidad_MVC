@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "BIENVENIDOS";
+}
+<h1>@ViewBag.Title</h1>
+
+
+<div class="container">
+
+    @{
+
+        if (!string.IsNullOrEmpty(ViewBag.Message))
+        {
+            <div class="alert alert-warning">@ViewBag.Message</div>
+        }
+    }
+    <br />
+    <br />
+    <address>
+        <strong>ADMINISTRADOR</strong>
+    </address>
+
+
+    <form action="/Home/Login" method="post">
+        <div class="form-group">
+            <label>Ingrese Usuario</label>
+            <input type="text" name="Usuario" value="" />
+        </div>
+        <div class="form-group">
+            <label>Ingrese Contraseña</label>
+            <input type="password" name="Contraseña" value="" />
+        </div>
+        <div class="form-group">
+            <button>Iniciar Sesion</button>
+        </div>
+    </form>
+
+</div>
+@*<br />
+<br />
+*@
